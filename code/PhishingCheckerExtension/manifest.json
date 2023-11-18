@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Phishing Checker",
+  "version": "1.0",
+  "description": "Check if the current URL is safe from phishing",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "browser_action": {
+    "default_icon": {
+    },
+    "default_title": "Check Phishing"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
